@@ -89,6 +89,16 @@
         .card-city { background: linear-gradient(135deg, #1c2226 0%, #252d33 100%); border-radius: 20px; padding: 30px 20px; text-align: center; border: 2px solid rgba(197, 160, 18, 0.3); cursor: pointer; margin-bottom: 15px; box-shadow: 0 10px 20px rgba(0,0,0,0.2); transition: 0.3s; }
         .card-city h3 { font-size: 28px; font-weight: 900; color: var(--secondary); margin: 0; }
         .card-city p { font-size: 13px; color: #888; margin-top: 8px; font-weight: 700; }
+        
+        .quick-contact-box { background: linear-gradient(135deg, #1c2226 0%, #151a1d 100%); border-radius: 20px; padding: 20px; border: 1px dashed var(--secondary); margin-top: 30px; text-align: center; box-shadow: 0 8px 25px rgba(0,0,0,0.3); }
+        .quick-contact-box h4 { color: #fff; margin: 0 0 10px; font-size: 16px; font-weight: 900; }
+        .quick-contact-box p { color: #888; margin: 0 0 15px; font-size: 12px; font-weight: 700; }
+        .qc-form-group { display: flex; gap: 8px; flex-direction: column; }
+        .qc-input { width: 100%; padding: 12px 15px; border-radius: 12px; border: 1px solid #333; background: #000; color: #fff; font-family: 'Cairo'; font-size: 14px; text-align: right; }
+        .qc-btn { background: var(--secondary); color: #000; font-weight: 900; border: none; padding: 12px 20px; border-radius: 12px; cursor: pointer; font-family: 'Cairo'; font-size: 14px; transition: 0.3s; width: 100%; }
+        .qc-btn:disabled { background: #333; color: #666; cursor: not-allowed; }
+        .qc-error-msg { color: #ff1100; font-size: 12px; font-weight: 700; text-align: right; margin-top: 4px; display: none; }
+
         .project-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
         .card-project { background: var(--card-bg); border-radius: 15px; padding: 25px 10px; text-align: center; border: 1px solid rgba(255,255,255,0.05); cursor: pointer; font-weight: 900; transition: 0.3s; display: flex; align-items: center; justify-content: center; min-height: 80px; }
         .apt-card { background: #1c2226; border-radius: 22px; margin-bottom: 25px; overflow: hidden; position: relative; }
@@ -107,14 +117,50 @@
         .price-line { display: flex; justify-content: space-between; margin-bottom: 5px; align-items: center; }
         .pl-label { font-size: 12px; color: #aaa; font-weight: 700; }
         .pl-val { font-size: 14px; color: var(--secondary); font-weight: 900; }
+        
+        .calculator-box { background: rgba(197, 160, 18, 0.04); border: 1px solid rgba(197, 160, 18, 0.2); border-radius: 12px; padding: 12px; margin-bottom: 15px; }
+        .calc-title { display: block; font-size: 12px; color: var(--secondary); font-weight: 900; margin-bottom: 8px; text-align: center; }
+        .calc-row { display: flex; flex-direction: column; margin-bottom: 8px; }
+        .calc-label-container { display: flex; justify-content: space-between; font-size: 11px; color: #bbb; margin-bottom: 4px; font-weight: 700; }
+        .calc-slider { width: 100%; -webkit-appearance: none; background: #000; height: 6px; border-radius: 3px; outline: none; accent-color: var(--secondary); }
+        .calc-slider::-webkit-slider-thumb { -webkit-appearance: none; width: 14px; height: 14px; border-radius: 50%; background: var(--secondary); cursor: pointer; }
+        
         .btn-preview-neon { background: var(--available); color: #000; text-align: center; padding: 16px; border-radius: 15px; cursor: pointer; font-weight: 900; margin-top: 10px; display: flex; align-items: center; justify-content: center; gap: 10px; box-shadow: 0 5px 20px rgba(57, 255, 20, 0.4); border: none; width: 100%; font-size: 16px; text-decoration: none; }
         .hidden { display: none !important; }
-        .units-counter { background: rgba(197, 160, 18, 0.1); color: var(--secondary); text-align: center; padding: 12px; border-radius: 12px; margin-bottom: 20px; font-size: 15px; font-weight: 900; border: 1px dashed var(--secondary); }
+        .units-counter { background: rgba(197, 160, 18, 0.1); color: var(--secondary); text-align: center; padding: 12px; border-radius: 12px; margin-bottom: 10px; font-size: 15px; font-weight: 900; border: 1px dashed var(--secondary); }
         .sold-badge-overlay { position: absolute; top: 15px; left: 15px; background: var(--sold); color: #fff; padding: 5px 15px; border-radius: 8px; font-weight: 900; font-size: 14px; z-index: 10; box-shadow: 0 0 15px rgba(255,17,0,0.5); }
+        
+        .search-container { margin-bottom: 15px; width: 100%; }
+        .search-input { width: 100%; padding: 14px 20px; border-radius: 15px; border: 1px solid rgba(197, 160, 18, 0.4); background: #1c2226; color: #fff; font-family: 'Cairo'; font-size: 15px; text-align: right; transition: 0.3s; }
+        .search-input:focus { border-color: var(--secondary); box-shadow: 0 0 10px rgba(197, 160, 18, 0.2); }
+        .filter-options-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 10px; }
+        .filter-select { padding: 10px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1); background: #1c2226; color: #bbb; font-family: 'Cairo'; font-size: 13px; text-align: right; cursor: pointer; width: 100%; }
+        .filter-select:focus { border-color: var(--secondary); color: #fff; }
+        .filter-full-width { grid-column: span 2; }
+
+        /* 🌟 ستايل النافذة المنبثقة الشيك في منتصف الشاشة */
+        .custom-popup-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.85); backdrop-filter: blur(8px); z-index: 999999; align-items: center; justify-content: center; padding: 20px; animation: fadeInPopup 0.3s ease; }
+        .custom-popup-box { background: #1c2226; border: 2px solid var(--secondary); border-radius: 20px; padding: 30px 20px; max-width: 380px; width: 100%; text-align: center; box-shadow: 0 15px 40px rgba(0,0,0,0.5); transform: scale(0.9); animation: scaleUpPopup 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards; }
+        @keyframes fadeInPopup { from { opacity: 0; } to { opacity: 1; } }
+        @keyframes scaleUpPopup { to { transform: scale(1); } }
+        .popup-icon-circle { width: 65px; height: 65px; background: rgba(197, 160, 18, 0.1); border: 2px solid var(--secondary); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 15px; color: var(--secondary); font-size: 28px; }
+        .popup-title { font-size: 20px; font-weight: 900; color: #fff; margin: 0 0 10px; }
+        .popup-desc { font-size: 14px; color: #bbb; line-height: 1.6; margin: 0 0 20px; }
+        .popup-close-btn { background: var(--secondary); color: #000; border: none; padding: 10px 30px; border-radius: 10px; font-weight: 900; font-family: 'Cairo'; cursor: pointer; transition: 0.2s; }
     </style>
 </head>
 <body oncontextmenu="return false;">
     <div id="loadingScreen"><div class="loader-logo">AL-FAYROUZ</div></div>
+
+    <!-- 🌟 واجهة الإشعار الشيك المضافة حديثاً في منتصف الشاشة -->
+    <div id="customPopup" class="custom-popup-overlay">
+        <div class="custom-popup-box">
+            <div class="popup-icon-circle">✨</div>
+            <div class="popup-title">تم استلام رقمك بنجاح</div>
+            <div class="popup-desc">ونتواصل معك قريبًا جداً ونقوم بالرد على كافة استفساراتكم.</div>
+            <button class="popup-close-btn" onclick="closeCustomPopup()">ممتاز</button>
+        </div>
+    </div>
 
     <div id="addUnitModal" class="modal-overlay">
         <div class="modal-box">
@@ -187,15 +233,60 @@
             <h2 class="section-title">اختر المدينة</h2>
             <div class="card-city" onclick="goToStep2('المنصورة الجديدة')"><h3>المنصورة الجديدة</h3><p>مستقبل الدلتا على البحر مباشرة</p></div>
             <div class="card-city" onclick="goToStep2('دمياط الجديدة')"><h3>دمياط الجديدة</h3><p>الرقي والاستثمار المضمون</p></div>
+            
+            <div class="quick-contact-box">
+                <h4>سيب رقمك وإحنا نتواصل معاك 📞</h4>
+                <p>سجل رقم تليفونك وهيقوم أحد مستشارينا العقاريين بالاتصال بك فوراً</p>
+                <div class="qc-form-group">
+                    <input type="text" id="qcPhoneInput" class="qc-input" placeholder="أدخل رقم هاتفك (مصر، السعودية، الخليج)..." required oninput="validateQuickContact()">
+                    <div id="qcError" class="qc-error-msg"></div>
+                    <button id="qcSubmitBtn" class="qc-btn" disabled onclick="submitQuickContact()">إرسال</button>
+                </div>
+            </div>
         </div>
-        <div id="step2" class="hidden"><button onclick="goBack(1)" style="background:#1c2226; border:1.5px solid #444; color:#fff; padding:10px 20px; border-radius:15px; font-weight:900; cursor:pointer; margin-bottom:20px;">رجوع</button><div id="projectButtons" class="project-grid"></div></div>
-        <div id="step3" class="hidden"><button onclick="goBack(2)" style="background:#1c2226; border:1.5px solid #444; color:#fff; padding:10px 20px; border-radius:15px; font-weight:900; cursor:pointer; margin-bottom:20px;">رجوع</button><div id="unitCounter" class="units-counter"></div><div id="apartmentList"></div></div>
+        <div id="step2" class="hidden">
+            <button onclick="goBack(1)" style="background:#1c2226; border:1.5px solid #444; color:#fff; padding:10px 20px; border-radius:15px; font-weight:900; cursor:pointer; margin-bottom:20px;">رجوع</button>
+            <div id="projectButtons" class="project-grid"></div>
+        </div>
+        <div id="step3" class="hidden">
+            <button onclick="goBack(2)" style="background:#1c2226; border:1.5px solid #444; color:#fff; padding:10px 20px; border-radius:15px; font-weight:900; cursor:pointer; margin-bottom:20px;">رجوع</button>
+            <div id="unitCounter" class="units-counter"></div>
+            
+            <div class="search-container">
+                <input type="text" id="unitSearchInput" class="search-input" placeholder="🔍 ابحث برقم العمارة، الشقة، الاتجاه، أو الدور..." oninput="filterUnits()">
+            </div>
+            
+            <div class="filter-options-grid">
+                <select id="filterPayType" class="filter-select" onchange="filterUnits()">
+                    <option value="all">كل أنظمة السداد</option>
+                    <option value="cash">كاش فقط</option>
+                    <option value="install">أقساط فقط</option>
+                </select>
+                <select id="filterViewDirection" class="filter-select" onchange="filterUnits()">
+                    <option value="all">كل الاتجاهات (الواجهة)</option>
+                    <option value="بحري">بحري</option>
+                    <option value="قبلي">قبلي</option>
+                    <option value="شرقي">شرقي</option>
+                    <option value="غربي">غربي</option>
+                </select>
+                <select id="sortByOption" class="filter-select filter-full-width" onchange="filterUnits()">
+                    <option value="price-asc">السعر: من الأقل للأعلى</option>
+                    <option value="price-desc">السعر: من الأعلى للأقل</option>
+                    <option value="size-desc">المساحة: الأكبر أولاً</option>
+                    <option value="size-asc">المساحة: الأصغر أولاً</option>
+                </select>
+            </div>
+            
+            <div id="apartmentList"></div>
+        </div>
     </div>
 
     <script>
         const API_URL = "https://script.google.com/macros/s/AKfycbxQsS6y6NgU_HdYXZOKsiV7xyzh7EBvYWLUeOacsqf7ERu93gnVyiOnNDUxqG6UUzcA/exec";
+        const CONTACTS_API_URL = "https://script.google.com/macros/s/AKfycbxhi5xUXEqHebX7dep_gAR_XTOWDvycUChH038JtVwEXiczOeHjMtf9rmBy56Bq34vkuw/exec"; 
         const CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQWKx4v-nn6JEM3O4En9ELAAKvDxF-NyAnNLPS1c3dLk3Hqvx9MLK9mEfGRP0XTT33P9QC6SOLUt9jM/pub?output=csv";
         let allData = [];
+        let currentFilteredData = [];
 
         function toggleSocial() { const menu = document.getElementById('subSocialMenu'); const btn = document.getElementById('mainSocialBtn'); menu.classList.toggle('active'); btn.style.transform = menu.classList.contains('active') ? 'rotate(45deg)' : 'rotate(0deg)'; }
         
@@ -207,6 +298,141 @@
             if (payType === 'كاش') isPayReady = document.getElementById('mTotalCash').value.trim() !== "";
             else if (payType === 'أقساط') isPayReady = document.getElementById('mPaid').value.trim() !== "" && document.getElementById('mOver').value.trim() !== "" && document.getElementById('mInstallValue').value.trim() !== "" && document.getElementById('mInstallYears').value.trim() !== "";
             btn.disabled = !(form.checkValidity() && isPayReady); 
+        }
+
+        // 🧠 تحويل الأرقام العربية الهندية (١٢٣٤) إلى الإنجليزية (1234) بشكل فوري وتنظيف المدخلات
+        function convertArabicNumbers(str) {
+            const arabicNums = [/٠/g, /١/g, /٢/g, /٣/g, /٤/g, /٥/g, /٦/g, /٧/g, /٨/g, /٩/g];
+            for (let i = 0; i < 10; i++) {
+                str = str.replace(arabicNums[i], i);
+            }
+            return str.replace(/[^0-9+]/g, ''); // إزالة الحروف تماماً وترك الأرقام وعلامة الزائد
+        }
+
+        // 🧠 دالة الذكاء الاصطناعي البرمجي للتحقق الذكي من أرقام الهواتف (مصر، السعودية والخليج)
+        function cleanAndValidatePhone(inputVal) {
+            let cleaned = convertArabicNumbers(inputVal.trim());
+            let errorMsg = "";
+            let isValid = false;
+
+            if (cleaned.length < 7) {
+                return { isValid: false, cleaned, errorMsg: "برجاء كتابة رقم هاتف صحيح" };
+            }
+
+            // 🇪🇬 حالة الرقم المصري
+            if (cleaned.startsWith("01") || cleaned.startsWith("1") || cleaned.startsWith("+20") || cleaned.startsWith("20")) {
+                let pureNumber = cleaned;
+                if (pureNumber.startsWith("+20")) pureNumber = pureNumber.substring(3);
+                else if (pureNumber.startsWith("20")) pureNumber = pureNumber.substring(2);
+                else if (pureNumber.startsWith("01")) pureNumber = pureNumber.substring(1); // الحساب بدون الصفر
+
+                if (pureNumber.startsWith("10") || pureNumber.startsWith("11") || pureNumber.startsWith("12") || pureNumber.startsWith("15") || pureNumber.startsWith("14")) {
+                    if (pureNumber.length < 10) {
+                        errorMsg = `الرقم ناقص! رقم المحمول المصري يتكون من 11 رقم، كتبت أنت ${pureNumber.length + 1} أرقام فقط.`;
+                    } else if (pureNumber.length > 10) {
+                        errorMsg = "الرقم زائد عن الحد المطلوب للمحمول المصري.";
+                    } else {
+                        isValid = true;
+                        cleaned = "0" + pureNumber; // توحيد الصيغة للشيت لتصبح دائماً ببدء 01
+                    }
+                } else {
+                    errorMsg = "رقم مصري غير صحيح، يجب أن يبدأ بـ 010، 011، 012، أو 015";
+                }
+            } 
+            // 🇸🇦 حالة الرقم السعودي
+            else if (cleaned.startsWith("05") || cleaned.startsWith("5") || cleaned.startsWith("+966") || cleaned.startsWith("966")) {
+                let pureNumber = cleaned;
+                if (pureNumber.startsWith("+966")) pureNumber = pureNumber.substring(4);
+                else if (pureNumber.startsWith("966")) pureNumber = pureNumber.substring(3);
+                else if (pureNumber.startsWith("05")) pureNumber = pureNumber.substring(1);
+
+                if (pureNumber.startsWith("5")) {
+                    if (pureNumber.length < 9) {
+                        errorMsg = `الرقم السعودي ناقص! رقم الجوال يجب أن يكون 10 أرقام بالصفر الإضافي.`;
+                    } else if (pureNumber.length > 9) {
+                        errorMsg = "الرقم زائد عن الحد المطلوب للجوال السعودي.";
+                    } else {
+                        isValid = true;
+                        cleaned = "+966" + pureNumber; // توحيد الصيغة الدولية للسعودية
+                    }
+                } else {
+                    errorMsg = "رقم جوال سعودي غير صحيح، يجب أن يبدأ بـ 05";
+                }
+            } 
+            // 🌍 أي شبكة خليجية أو دولية أخرى كتبت المفتاح الدولي مباشرة
+            else if (cleaned.startsWith("+") || cleaned.length >= 8) {
+                isValid = true; // نمرره كدولي سليم طالما طويل كفاية وبدأ بمفتاح أو بدون
+            } else {
+                errorMsg = "تأكد من كتابة رقم الهاتف بالصيغة الصحيحة (مثل 010... بمصر أو 05... بالسعودية)";
+            }
+
+            return { isValid, cleaned, errorMsg };
+        }
+
+        function validateQuickContact() {
+            const input = document.getElementById('qcPhoneInput');
+            const btn = document.getElementById('qcSubmitBtn');
+            const errorDiv = document.getElementById('qcError');
+            
+            // فلترة الحروف فوراً ومنع ظهورها داخل مربع الكتابة
+            let clearedChars = convertArabicNumbers(input.value);
+            if (input.value !== clearedChars) {
+                input.value = clearedChars;
+            }
+
+            if (input.value.trim() === "") {
+                errorDiv.style.display = "none";
+                btn.disabled = true;
+                return;
+            }
+
+            const check = cleanAndValidatePhone(input.value);
+            if (check.isValid) {
+                errorDiv.style.display = "none";
+                btn.disabled = false;
+            } else {
+                errorDiv.innerText = check.errorMsg;
+                errorDiv.style.display = "block";
+                btn.disabled = true; // يظل القفل مفعل لو الرقم فيه عيب أو ناقص
+            }
+        }
+
+        // 🌟 فتح وقفل واجهة الـ Popup الشيك في منتصف الشاشة بالكامل
+        function showCustomPopup() {
+            document.getElementById('customPopup').style.display = 'flex';
+        }
+        function closeCustomPopup() {
+            document.getElementById('customPopup').style.display = 'none';
+        }
+
+        async function submitQuickContact() {
+            const btn = document.getElementById('qcSubmitBtn');
+            const input = document.getElementById('qcPhoneInput');
+            const originalText = btn.innerText;
+            
+            const check = cleanAndValidatePhone(input.value);
+            if (!check.isValid) return; // حماية إضافية
+
+            btn.disabled = true; btn.innerText = "جاري...";
+            
+            const params = new URLSearchParams();
+            params.append('action', 'addContact');
+            params.append('phone', check.cleaned); // إرسال الرقم المنظف والكامل والمترجم للإنجليزية
+            params.append('date', new Date().toLocaleString('ae', {timeZone: 'Africa/Cairo'}));
+
+            try {
+                await fetch(CONTACTS_API_URL, { 
+                    method: 'POST', 
+                    mode: 'no-cors',
+                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                    body: params.toString()
+                });
+                showCustomPopup(); // ظهور الواجهة الشيك في المنتصف فوراً
+                input.value = ""; btn.innerText = originalText; btn.disabled = true;
+            } catch(e) {
+                showCustomPopup(); // احتياطي في حالات النجاح الصامت للـ no-cors
+                input.value = ""; btn.innerText = originalText; btn.disabled = true;
+            }
         }
 
         function openM() { document.getElementById('addUnitModal').style.display = 'flex'; document.getElementById('formContent').style.display = 'block'; document.getElementById('successState').style.display = 'none'; }
@@ -248,7 +474,7 @@
             let finalPaid = document.getElementById('mPayType').value === 'كاش' ? document.getElementById('mTotalCash').value : document.getElementById('mPaid').value;
             let fullProject = document.getElementById('mProject').value;
             if(!document.getElementById('mZone').classList.contains('hidden')) fullProject += " - " + document.getElementById('mZone').value;
-            const data = { action: "addUnit", city: document.getElementById('mCity').value, project: fullProject, bld: document.getElementById('mBld').value, apt: document.getElementById('mApt').value, floor: document.getElementById('mFloor').value || "أرضي", view: document.getElementById('mView').value, paid: finalPaid || 0, over: document.getElementById('mOver').value || 0, status: "تحت المراجعة", size: document.getElementById('mSize').value || 0, pricePerMeter: document.getElementById('mPricePerMeter').value || 0, installYears: document.getElementById('mInstallYears').value || 0, installValue: document.getElementById('mInstallValue').value || 0, yearsLeft: document.getElementById('mInstallYears').value || 0, phone: document.getElementById('mPhone').value };
+            const data = { action: "addUnit", city: document.getElementById('mCity').value, project: fullProject, bld: document.getElementById('mBld').value, apt: document.getElementById('mApt').value, floor: document.getElementById('mFloor').value || "أرضي", view: document.getElementById('mView').value, paid: finalPaid || 0, over: document.getElementById('mOver').value || 0, status: "تحت المراجعة", size: document.getElementById('mSize').value || 0, pricePerMeter: document.getElementById('mPricePerMeter').value || 0, installYears: document.getElementById('mInstallYears').value || 0, installValue: document.getElementById('mInstallValue').value || 0, yearsLeft: document.getElementById('mInstallYears').value || 0, phone: convertArabicNumbers(document.getElementById('mPhone').value) };
             try { await fetch(API_URL, { method: 'POST', mode: 'no-cors', body: JSON.stringify(data) }); } catch(e) {}
         }
 
@@ -269,33 +495,93 @@
         }
 
         function render(kw) {
-            window.currentKw = kw; const list = document.getElementById('apartmentList');
-            if(allData.length === 0) { list.innerHTML = '<div style="text-align:center; padding:50px; color:#888;">جاري تحميل الوحدات...</div>'; return; }
+            window.currentKw = kw;
+            document.getElementById('unitSearchInput').value = '';
+            document.getElementById('filterPayType').value = 'all';
+            document.getElementById('filterViewDirection').value = 'all';
+            document.getElementById('sortByOption').value = 'price-asc';
             
-            let filtered = allData.filter(r => {
+            if(allData.length === 0) { 
+                document.getElementById('apartmentList').innerHTML = '<div style="text-align:center; padding:50px; color:#888;">جاري تحميل الوحدات...</div>'; 
+                return; 
+            }
+            
+            currentFilteredData = allData.filter(r => {
                 if(!r[0]) return false;
                 let cityMatch = (r[0]||"").toString().trim() === window.curCity;
                 let projMatch = (r[1]||"").toString().includes(kw);
                 let status = (r[11]||"").toString().trim();
-                return cityMatch && projMatch && status !== "تحت المراجعة" && status !== "لم تعرض بعد";
+                return cityMatch && projMatch && status !== "تحت المراجعة" && status !== "لمعرض بعد" && status !== "لم تعرض بعد";
             });
 
-            // ترتيب: المتاح أولاً ثم المباع في الآخر
-            filtered.sort((a, b) => {
+            filterUnits();
+        }
+
+        window.configureInteractiveInstallment = function(index, totalRemaining) {
+            const yearsSlider = document.getElementById(`slider-years-${index}`);
+            const yearsValueText = document.getElementById(`val-years-${index}`);
+            const resultText = document.getElementById(`calc-result-${index}`);
+            
+            let currentYears = parseInt(yearsSlider.value);
+            yearsValueText.innerText = currentYears + " سنوات";
+            
+            let newInstallValue = Math.round(totalRemaining / currentYears);
+            resultText.innerText = newInstallValue.toLocaleString() + " ج.م / سنوياً";
+        }
+
+        function filterUnits() {
+            let searchText = document.getElementById('unitSearchInput').value.toLowerCase().trim();
+            let payTypeFilter = document.getElementById('filterPayType').value;
+            let directionFilter = document.getElementById('filterViewDirection').value;
+            let sortOption = document.getElementById('sortByOption').value;
+
+            let result = currentFilteredData.filter(r => {
+                let bld = (r[2] || "").toString().toLowerCase();
+                let apt = (r[3] || "").toString().toLowerCase();
+                let floor = (r[4] || "").toString().toLowerCase();
+                let view = (r[5] || "").toString().toLowerCase();
+                return bld.includes(searchText) || apt.includes(searchText) || floor.includes(searchText) || view.includes(searchText);
+            });
+
+            if (payTypeFilter === 'cash') {
+                result = result.filter(r => (parseInt(r[9]) || 0) === 0);
+            } else if (payTypeFilter === 'install') {
+                result = result.filter(r => (parseInt(r[9]) || 0) > 0);
+            }
+
+            if (directionFilter !== 'all') {
+                result = result.filter(r => (r[5] || "").toString().includes(directionFilter));
+            }
+
+            result.sort((a, b) => {
                 let sA = (a[11]||"").toString().trim();
                 let sB = (b[11]||"").toString().trim();
                 let isSoldA = sA.includes("بيع") || sA.includes("تعاقد");
                 let isSoldB = sB.includes("بيع") || sB.includes("تعاقد");
                 if (isSoldA && !isSoldB) return 1;
                 if (!isSoldA && isSoldB) return -1;
-                let cashA = (parseFloat(a[6]) || 0) + (parseFloat(a[7]) || 0);
-                let cashB = (parseFloat(b[6]) || 0) + (parseFloat(b[7]) || 0);
-                return cashA - cashB;
+
+                if (sortOption === 'price-asc' || sortOption === 'price-desc') {
+                    let cashA = (parseFloat(a[6]) || 0) + (parseFloat(a[7]) || 0);
+                    let cashB = (parseFloat(b[6]) || 0) + (parseFloat(b[7]) || 0);
+                    return sortOption === 'price-asc' ? cashA - cashB : cashB - cashA;
+                } else if (sortOption === 'size-asc' || sortOption === 'size-desc') {
+                    let sizeA = parseFloat(a[13]) || 0;
+                    let sizeB = parseFloat(b[13]) || 0;
+                    return sortOption === 'size-asc' ? sizeA - sizeB : sizeB - sizeA;
+                }
+                return 0;
             });
 
-            document.getElementById('unitCounter').innerText = `متاح ${filtered.filter(r => !r[11].includes("بيع") && !r[11].includes("تعاقد")).length} وحدة حالياً`;
+            buildHtmlList(result);
+        }
+
+        function buildHtmlList(dataArray) {
+            const list = document.getElementById('apartmentList');
+            document.getElementById('unitCounter').innerText = `متاح ${dataArray.filter(r => !r[11].includes("بيع") && !r[11].includes("تعاقد")).length} وحدة حالياً`;
+            
             let h = '';
-            filtered.forEach(r => {
+            dataArray.forEach((r, index) => {
                 let img = (r[12] && r[12].includes('drive')) ? `https://drive.google.com/thumbnail?sz=1000&id=${r[12].split('id=')[1]}` : r[12];
                 let status = (r[11]||"").toString().trim();
                 let isSold = status.includes("بيع") || status.includes("تعاقد");
@@ -307,14 +593,16 @@
                 };
 
                 let paid = parseFloat(r[6]) || 0, over = parseFloat(r[7]) || 0, cashNow = paid + over;
-                let pricePerMeter = r[8] || '--', totalValue = r[15] || '0';
-                let yearsCount = (r[9]||"").toString().trim();
-                let displayYears = (yearsCount === "0" || yearsCount === "") ? "حدد سنوات تقسيط بنفسك" : yearsCount + " سنوات";
+                let pricePerMeter = r[8] || '--', totalValue = parseFloat(r[15]) || 0;
+                let yearsCount = parseInt(r[9]) || 0;
+                let displayYears = (yearsCount === 0) ? "كاش بالكامل" : yearsCount + " سنوات";
                 let instPayment = r[10] || '--';
                 
                 let bldLabel = "عمارة", aptLabel = "شقة";
                 if(r[1].includes("زاهية")) { bldLabel = "منطقة"; aptLabel = "فيلا"; }
                 else if(r[1].includes("تجارية")) { bldLabel = "مبنى"; aptLabel = "محل/مكتب"; }
+
+                let totalRemaining = totalValue - paid;
 
                 let waMsg = `طلب معاينة عقار:%0Aالمدينة: ${window.curCity}%0Aالمشروع: ${r[1]}%0A${bldLabel}: ${r[2]}%0A${aptLabel}: ${r[3]}%0Aالدور: ${r[4]}%0Aالاتجاه: ${r[5]}%0Aالمساحة: ${r[13]} م²%0Aالمطلوب كاش: ${fmt(cashNow)} ج.م`;
 
@@ -330,12 +618,30 @@
                             <div class="spec-item"><span class="spec-label">المساحة</span><span class="spec-value">${r[13]||'--'} م²</span></div>
                             <div class="spec-item"><span class="spec-label">السعر الكلي</span><span class="spec-value">${fmt(totalValue)} ج.م</span></div>
                             <div class="spec-item"><span class="spec-label">سعر المتر</span><span class="spec-value">${fmt(pricePerMeter)} ج.م</span></div>
-                            <div class="spec-item"><span class="spec-label">سنوات التقسيط</span><span class="spec-value">${displayYears}</span></div>
-                            <div class="spec-item" style="grid-column: span 2;"><span class="spec-label">دفعة التقسيط</span><span class="spec-value">${fmt(instPayment)} ج.م</span></div>
+                            <div class="spec-item"><span class="spec-label">نظام السداد</span><span class="spec-value">${displayYears}</span></div>
+                            ${yearsCount > 0 ? `<div class="spec-item" style="grid-column: span 2;"><span class="spec-label">دفعة التقسيط الحالية</span><span class="spec-value">${fmt(instPayment)} ج.م</span></div>` : ''}
                         </div>
+
+                        ${(!isSold && yearsCount > 0 && totalRemaining > 0) ? `
+                        <div class="calculator-box">
+                            <span class="calc-title">🧮 حاسبة الأقساط المرنة (عدّل وجرّب بنفسك)</span>
+                            <div class="calc-row">
+                                <div class="calc-label-container">
+                                    <span>فترة التقسيط المستهدفة:</span>
+                                    <span id="val-years-${index}" style="color:var(--secondary); font-weight:900;">${yearsCount} سنوات</span>
+                                </div>
+                                <input type="range" id="slider-years-${index}" class="calc-slider" min="1" max="10" value="${yearsCount}" oninput="configureInteractiveInstallment(${index}, ${totalRemaining})">
+                            </div>
+                            <div style="display:flex; justify-content:space-between; margin-top:10px; font-size:12px; border-top:1px dashed rgba(255,255,255,0.05); padding-top:8px;">
+                                <span style="color:#aaa;">القسط المتوقع الجديد:</span>
+                                <span id="calc-result-${index}" style="color:var(--available); font-weight:900;">${fmt(instPayment)} ج.م</span>
+                            </div>
+                        </div>
+                        ` : ''}
+
                         <div class="price-box-container">
                             <div class="price-line"><span class="pl-label">المدفوع:</span><span class="pl-val" style="color:#eee">${fmt(paid)} ج.م</span></div>
-                            <div class="price-line"><span class="pl-label">الأوفر:</span><span class="pl-val" style="color:#ef5350">+ ${fmt(over)} ج.م</span></div>
+                            <div class="price-line"><span class="pl-label">الأوفر:</span><span class="pl-val" style="color:#ef5350">+ ${fmt(over)} ج.m</span></div>
                             <div style="margin-top:15px; background:${isSold ? 'rgba(255,17,0,0.1)' : 'rgba(57,255,20,0.1)'}; padding:15px; border-radius:12px; border:2px solid ${isSold ? 'var(--sold)' : 'var(--available)'}; text-align:center;">
                                 <div style="color:${isSold ? 'var(--sold)' : 'var(--available)'}; font-weight:900; font-size:15px;">المطلوب كاش حالياً</div>
                                 <div style="color:#fff; font-size:24px; font-weight:900;">${fmt(cashNow)} ج.م</div>
@@ -348,16 +654,25 @@
                     </div>
                 </div>`;
             });
-            list.innerHTML = h || '<div style="text-align:center; padding:50px; color:#888;">لا توجد وحدات متاحة حالياً</div>';
+            list.innerHTML = h || '<div style="text-align:center; padding:50px; color:#888;">لا توجد وحدات تطابق خيارات التصفية الحالية</div>';
         }
 
         function goToStep2(c) { window.curCity = c; switchStep('step2'); let projects = c === 'المنصورة الجديدة' ? ['جنة', 'سكن مصر', 'زاهية', 'إسكان ساحلي', 'تجارية وإدارية'] : ['جنة', 'سكن مصر', 'دار مصر', 'أهالي', 'تجارية وإدارية']; let html = ''; projects.forEach(p => html += `<div class="card-project" onclick="showU('${p}')">${p}</div>`); document.getElementById('projectButtons').innerHTML = html; }
         function showU(kw) { switchStep('step3'); render(kw); }
-        function switchStep(id) { ['step1','step2','step3'].forEach(s => document.getElementById(s).classList.add('hidden')); document.getElementById(id).classList.remove('hidden'); window.scrollTo(0,0); }
-        function goBack(s) { switchStep('step' + s); }
+        
+        function switchStep(stepId) {
+            document.getElementById('step1').classList.add('hidden');
+            document.getElementById('step2').classList.add('hidden');
+            document.getElementById('step3').classList.add('hidden');
+            document.getElementById(stepId).classList.remove('hidden');
+        }
+
+        function goBack(stepNum) {
+            if (stepNum === 1) switchStep('step1');
+            else if (stepNum === 2) switchStep('step2');
+        }
+
         window.onload = fetchD;
     </script>
 </body>
 </html>
-
-
